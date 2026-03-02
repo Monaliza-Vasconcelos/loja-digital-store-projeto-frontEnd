@@ -1,16 +1,61 @@
-# React + Vite
+🛒 Digital Store é uma aplicação front-end de e-commerce em desenvolvimento, construída com foco em componentização, escalabilidade e boas práticas no desenvolvimento de interfaces modernas.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O projeto está sendo desenvolvido utilizando:
 
-Currently, two official plugins are available:
+React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Vite
 
-## React Compiler
+React Router DOM
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+PrimeReact
 
-## Expanding the ESLint configuration
+PrimeFlex
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A aplicação simula o fluxo de uma loja virtual e possui uma arquitetura preparada para crescimento, contemplando:
+
+Componentização e reutilização de UI
+
+Gerenciamento de rotas
+
+Renderização dinâmica de produtos
+
+Organização modular de páginas e layouts
+
+Estrutura preparada para consumo de APIs REST
+
+Interface responsiva
+
+A estrutura do projeto foi pensada para suportar futuras integrações como:
+
+Backend
+
+Autenticação de usuários
+
+Carrinho persistente
+
+Checkout e pagamentos
+
+📚 Este projeto faz parte das atividades práticas do projeto Front-end do programa Geração Tech, com foco na aplicação de conceitos reais de desenvolvimento e construção de aplicações escaláveis.
+
+🚀 Como visualizar o projeto
+
+Para rodar o projeto localmente:
+
+# Clonar o repositório
+git clone https://github.com/Monaliza-Vasconcelos/loja-digital-store-projeto-frontEnd.git
+
+# Acessar a pasta
+cd loja-digital-store-projeto-frontEnd
+
+# Instalar dependências
+npm install
+
+# Rodar o projeto
+npm run dev
+
+Depois disso, basta acessar no navegador:
+
+http://localhost:5173
+
+🚧 Projeto em desenvolvimento contínuo.
