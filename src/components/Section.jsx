@@ -30,7 +30,7 @@ const Section = (props) => {
           </div>
         ))
       ) : (
-        <div className={`text-${props.titleAlign} p-6`}>
+        <div className={`text-${props.titleAlign} pl-6`}>
           <h3 style={{ color: "var(--dark-gray-2)", fontSize: "24px" }}>
             {props.title}
           </h3>
