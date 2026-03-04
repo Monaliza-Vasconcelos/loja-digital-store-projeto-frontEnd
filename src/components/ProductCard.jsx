@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ProductCard = (props) => {
 
     // Define a cor e o design do texto com base na presença ou não de um preço com desconto.
@@ -6,6 +8,7 @@ const ProductCard = (props) => {
     const textDecoration = props.discountedPrice ? "line-through" : "none";
     return (
         <>
+            <Link to={`/product/${props.id}`} style={{ textDecoration: "none", color: "var(----dark-gray-2)"}}>
             <div className="flex flex-column bg-white border-round shadow-3" style={{ width: "292px", height: "auto" }}>
 
                 <img 
@@ -21,6 +24,7 @@ const ProductCard = (props) => {
                     </section>
                 </div>
             </div>
+            </Link>
         </>
     );
 }
