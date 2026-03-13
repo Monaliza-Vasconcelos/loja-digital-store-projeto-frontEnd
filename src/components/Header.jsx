@@ -29,35 +29,37 @@ const Header = () => {
 
     return (
         <>
-            <header>
-                <div className="flex justify-content-between align-items-center px-6 py-3">
+            <header className="header-container">
+                <div className="header">
+
                     <div>
-                        <Logo />
+                        <Logo cordafonte={'header'}/>
                     </div>
 
-                    <div className="flex gap-3 align-items-center">
+                    <div className="header-search">
                         <InputText
                             type="text"
                             placeholder="Pesquisar produtos"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             onKeyDown={handleKeyDown}
-                            className="padding"
-                            style={{width:"500px"}}
+                            className="header-padding"
                         />
-                        <Button onClick={search} icon="pi pi-search" iconPos="right" className="padding"/>
+                        <Button onClick={search} icon="pi pi-search" iconPos="right" className="header-padding"/>
                     </div>
 
-                    <div className="flex gap-3 align-items-center">
-                        <Link to={"/register"} className="text-base" style={{color: "var(--dark-gray-2)"}}>Cadastre-se</Link>
-                        <Link to={"/login"} className="w-7rem h-2-5rem border-round text-sm font-bold text-white">
-                            <Button label="Entrar" className="padding"/>
+                    <div className="header-actions">
+                        <Link to={"/register"} className="register-link" >Cadastre-se</Link>
+                        <Link to={"/login"} className="login-link">
+                            <Button label="Entrar" className="header-padding"/>
                         </Link>
-                        <img src={Cart} alt="Carrinho de compras" className="w-2rem h-2rem" />
+                        <img src={Cart} alt="Carrinho de compras" className="img-cart" />
                     </div>
+
                 </div>
+
                 <nav
-                    className="flex gap-5 px-6 py-3">
+                    className="nav-menu">
                     <NavLink to={"/"}
                         className={getNavLinkClass}>
                         Home</NavLink>

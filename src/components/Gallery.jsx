@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../Gallery.css";
 import img1 from "../assets/arrow-left.svg"
 import img2 from "../assets/arrow-right.svg"
 
@@ -33,7 +32,7 @@ const Gallery = (props) => {
                     <img src={props.images[index].src} alt="Gallery" style={{ width: props.width, height: props.height, borderRadius: props.radius }}/>
                 </div>
                 {index > 0 && (
-                    <i className={"next-button"} onClick={nextImage}><img src={img1} alt="seta"/></i>
+                    <i className="next-button" onClick={nextImage}><img src={img1} alt="seta"/></i>
                 )}
                 {index < props.images.length - 1 && (
                     <i className="prev-button" onClick={prevImage}><img src={img2} alt="seta"/></i>

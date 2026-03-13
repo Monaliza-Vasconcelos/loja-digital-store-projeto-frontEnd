@@ -2,44 +2,45 @@ import { useState } from "react";
 
 const ProductOptions = (props) => {
 
-    const [option, setOption] = useState(null)
+    const [option, setOption] = useState(null);
 
-    const borderRadius = props.shape === "circle" ? "50%" : props.radius;
-
-    const isCircle = props.shape === "circle"
-
-    const isColor = props.type == "color"
+    const isCircle = props.shape === "circle";
+    const isColor = props.type === "color";
 
     return (
-        <>
-            <div className="flex flex-column gap-3">
-                <p><strong>Tamanho e numeração</strong></p>
-                <div className="flex">
-                    {props.options.map((item, index) => {
-                        const isSelected = option === index;
-                        return <div
-                            onClick={() => setOption(index)}
-                            key={index}
-                            style={{
-                                height: isCircle ? "31px" : "46px",
-                                width: isCircle ? "31px" : "46px",
-                                minWidth: isCircle ? "31px" : "46px",
-                                borderRadius: borderRadius,
-                                border: isSelected
-                                    ? "2px solid var(--primary)"
-                                    : "1px solid var(--light-gray-2)",
-                                backgroundColor: isColor ? item : "transparent",
-                                fontSize: !isColor ? "24px" : undefined,
-                                color: !isColor ? "var(--dark-gray-2)" : undefined,
+        <div className="product-options">
 
-                            }}
-                            className="flex justify-content-center align-items-center cursor-pointer"
-                        >{!isColor && item}</div>
-                    })}
-                </div>
+            <p className="product-options__title">
+                <strong>Tamanho e numeração</strong>
+            </p>
+
+            <div className="product-options__list">
+
+                {props.options.map((item, index) => {
+
+                    const isSelected = option === index;
+
+                    return (
+                        <div
+                            key={index}
+                            onClick={() => setOption(index)}
+                            className={`
+                                product-options__item
+                                ${isCircle ? "product-options__item--circle" : ""}
+                                ${isColor ? "product-options__item--color" : ""}
+                                ${isSelected ? "product-options__item--selected" : ""}
+                            `}
+                            style={isColor ? { backgroundColor: item } : {}}
+                        >
+                            {!isColor && item}
+                        </div>
+                    );
+
+                })}
+
             </div>
 
-        </>
+        </div>
     );
 }
 

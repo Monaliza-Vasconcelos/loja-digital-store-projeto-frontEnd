@@ -8,19 +8,18 @@ const ProductCard = (props) => {
     const textDecoration = props.discountedPrice ? "line-through" : "none";
     return (
         <>
-            <Link to={`/product/${props.id}`} style={{ textDecoration: "none", color: "var(----dark-gray-2)"}}>
-            <div className="flex flex-column bg-white border-round shadow-3" style={{ width: "292px", height: "auto" }}>
+            <Link to={`/product/${props.id}`} style={{ textDecoration: "none", color: "var(--dark-gray-2)"}}>
+            <div className="product-card">
 
                 <img 
                     src={props.image} alt={props.name} 
-                    className="w-full" 
-                    style={{ aspectRatio: "1 / 1", objectFit: "cover" }} 
+                    className="product-card__image"  
                 />
-                <div className="p-3">
+                <div className="product-card__content">
                     <h3>{props.name}</h3>   
-                    <section className="flex align-items-center gap-3">
-                        <p style={{ color: color, fontSize: "24px", textDecoration: textDecoration }}>R${props.price}</p>
-                        <span style={{ fontSize: "24px", color: "var(--dark-gray)" }}>{props.discountedPrice ? `R$${props.discountedPrice}` : ""}</span>
+                    <section className="product-card__price-section">
+                        <p className="product-card__price" style={{ color: color, textDecoration: textDecoration }}>R${props.price.toFixed(2)}</p>
+                        <span className="product-card__discount-price">{props.discountedPrice ? `R$${props.discountedPrice}` : ""}</span>
                     </section>
                 </div>
             </div>

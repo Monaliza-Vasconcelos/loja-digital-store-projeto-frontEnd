@@ -3,16 +3,30 @@ import { Link } from "react-router-dom";
 const Information = (props) => {
 
     return ( 
-        <>
-            <div>
-                <h3 style={{color:"var(--white)"}}>{props.title}</h3>
-                <ul className="list-none p-0 m-0">
-                    {props.information.map((item, index) => (
-                        <li key={index}><Link to={item.link}>{item.text}</Link></li>
-                    ))}
-                </ul>
-            </div>
-        </>
+        <div className="information">
+
+            <h3 className="information__title">
+                {props.title}
+            </h3>
+
+            <ul className="information__list">
+
+                {props.information.map((item, index) => (
+                    
+                    <li key={index} className="information__item">
+                        <Link 
+                            to={item.link}
+                            className="information__link"
+                        >
+                            {item.text}
+                        </Link>
+                    </li>
+
+                ))}
+
+            </ul>
+
+        </div>
      );
 }
  

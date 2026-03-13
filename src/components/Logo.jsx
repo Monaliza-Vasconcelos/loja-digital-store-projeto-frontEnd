@@ -1,13 +1,20 @@
 import logo from '../assets/logo-header.svg';
+import logoFooter from '../assets/logo-footer.svg'
 
-const Logo = () => {
+const Logo = (props) => {
+    
+    const returnLogo = () =>{
+        
+
+        if(props.cordafonte === 'header'){
+            return logo
+        } else{
+            return logoFooter
+        }
+    }
     return ( 
         <div>
-            <img 
-                src={logo} 
-                alt="Logo da empresa" 
-                style={{ width: "253px", height: "44px" }}
-            />
+            <img className='img-logo' src={returnLogo()} alt="Logo da empresa" />
         </div>
      );
 }

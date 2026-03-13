@@ -8,7 +8,7 @@ const Section = (props) => {
 
       {props.link && props.link.length > 0 ? (
         props.link.map((item, index) => (
-          <div key={index} className="flex justify-content-between align-items-center p-6">
+          <div key={index} className="section__header">
             
             <div className={`text-${props.titleAlign} flex-1`}>
               <h3 style={{ color: "var(--dark-gray-2)", fontSize: "24px" }}>
@@ -16,11 +16,11 @@ const Section = (props) => {
               </h3>
             </div>
 
-            <div className="text-right">
+            <div>
               <h3>{item.text}</h3>
               <Link
                 to={item.href}
-                style={{ color: "var(--primary)" }}
+                className="section__link-item"
               >
                 {item.href}
               </Link>
@@ -30,7 +30,7 @@ const Section = (props) => {
         ))
       ) : (
         <div className={`text-${props.titleAlign} p-7`}>
-          <h3 style={{ color: "var(--dark-gray-2)", fontSize: "24px" }}>
+          <h3 className="section-titleAlign">
             {props.title}
           </h3>
         </div>
